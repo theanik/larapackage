@@ -1,62 +1,165 @@
-<p align="center"><a href="https://laravel.com" target="_blank"><img src="https://raw.githubusercontent.com/laravel/art/master/logo-lockup/5%20SVG/2%20CMYK/1%20Full%20Color/laravel-logolockup-cmyk-red.svg" width="400"></a></p>
+# Laravel Extra Command
+A simple package for create ** Repository, Repository with Interface, Service, Trait** form command line using `php artisan` command.
+[Note : This package also worked for [nWidart/laravel-modules](https://github.com/nWidart/laravel-modules)]
 
-<p align="center">
-<a href="https://travis-ci.org/laravel/framework"><img src="https://travis-ci.org/laravel/framework.svg" alt="Build Status"></a>
-<a href="https://packagist.org/packages/laravel/framework"><img src="https://img.shields.io/packagist/dt/laravel/framework" alt="Total Downloads"></a>
-<a href="https://packagist.org/packages/laravel/framework"><img src="https://img.shields.io/packagist/v/laravel/framework" alt="Latest Stable Version"></a>
-<a href="https://packagist.org/packages/laravel/framework"><img src="https://img.shields.io/packagist/l/laravel/framework" alt="License"></a>
-</p>
+## Installation
+Require the package with composer using the following command:
 
-## About Laravel
+`composer require theanik/laravel-make-repository --dev`
 
-Laravel is a web application framework with expressive, elegant syntax. We believe development must be an enjoyable and creative experience to be truly fulfilling. Laravel takes the pain out of development by easing common tasks used in many web projects, such as:
+Or add the following to your composer.json's require-dev section and `composer update`
 
-- [Simple, fast routing engine](https://laravel.com/docs/routing).
-- [Powerful dependency injection container](https://laravel.com/docs/container).
-- Multiple back-ends for [session](https://laravel.com/docs/session) and [cache](https://laravel.com/docs/cache) storage.
-- Expressive, intuitive [database ORM](https://laravel.com/docs/eloquent).
-- Database agnostic [schema migrations](https://laravel.com/docs/migrations).
-- [Robust background job processing](https://laravel.com/docs/queues).
-- [Real-time event broadcasting](https://laravel.com/docs/broadcasting).
+```json
+"require-dev": {
+          "jason-guru/laravel-make-repository": "^0.0.2"
+}
+```
+## Artisan Commands
 
-Laravel is accessible, powerful, and provides tools required for large, robust applications.
+###### In Laravel Project
 
-## Learning Laravel
+Create a repository Class.
+`php artisan make:repository your-repository-name`
 
-Laravel has the most extensive and thorough [documentation](https://laravel.com/docs) and video tutorial library of all modern web application frameworks, making it a breeze to get started with the framework.
+Example:
+```
+php artisan make:repository UserRepository
+```
+or
+```
+php artisan make:repository Backend\UserRepository
+```
 
-If you don't feel like reading, [Laracasts](https://laracasts.com) can help. Laracasts contains over 1500 video tutorials on a range of topics including Laravel, modern PHP, unit testing, and JavaScript. Boost your skills by digging into our comprehensive video library.
+The above will create a **Repositories** directory inside the **App** directory.
 
-## Laravel Sponsors
+Create a repository with Interface.
+`php artisan make:repository your-repository-name -i`
 
-We would like to extend our thanks to the following sponsors for funding Laravel development. If you are interested in becoming a sponsor, please visit the Laravel [Patreon page](https://patreon.com/taylorotwell).
+Example:
+```
+php artisan make:repository UserRepository -i
+```
+or
+```
+php artisan make:repository Backend\UserRepository -i
+```
+Here you need to put extra `-i` flag.
+The above will create a **Repositories** directory inside the **App** directory.
 
-### Premium Partners
 
-- **[Vehikl](https://vehikl.com/)**
-- **[Tighten Co.](https://tighten.co)**
-- **[Kirschbaum Development Group](https://kirschbaumdevelopment.com)**
-- **[64 Robots](https://64robots.com)**
-- **[Cubet Techno Labs](https://cubettech.com)**
-- **[Cyber-Duck](https://cyber-duck.co.uk)**
-- **[Many](https://www.many.co.uk)**
-- **[Webdock, Fast VPS Hosting](https://www.webdock.io/en)**
-- **[DevSquad](https://devsquad.com)**
-- **[Curotec](https://www.curotec.com/)**
-- **[OP.GG](https://op.gg)**
+Create a Service Class.
+`php artisan make:service your-service-name`
 
-## Contributing
+Example:
+```
+php artisan make:service UserService
+```
+or
+```
+php artisan make:service Backend\UserService
+```
+The above will create a **Services** directory inside the **App** directory.
 
-Thank you for considering contributing to the Laravel framework! The contribution guide can be found in the [Laravel documentation](https://laravel.com/docs/contributions).
+Create a Trait.
+`php artisan make:trait your-trait-name`
 
-## Code of Conduct
+Example:
+```
+php artisan make:trait HasAuth
+```
+or
+```
+php artisan make:trait Backend\HasAuth
+```
+The above will create a **Traits** directory inside the **App** directory.
 
-In order to ensure that the Laravel community is welcoming to all, please review and abide by the [Code of Conduct](https://laravel.com/docs/contributions#code-of-conduct).
 
-## Security Vulnerabilities
 
-If you discover a security vulnerability within Laravel, please send an e-mail to Taylor Otwell via [taylor@laravel.com](mailto:taylor@laravel.com). All security vulnerabilities will be promptly addressed.
+###### In [nWidart/laravel-modules](https://github.com/nWidart/laravel-modules) Modules
 
-## License
+Create a repository Class.
+`php artisan module-make:repository your-repository-name {module-name}`
 
-The Laravel framework is open-sourced software licensed under the [MIT license](https://opensource.org/licenses/MIT).
+Example:
+```
+php artisan module-make:repository UserRepository Blog
+```
+or
+```
+php artisan make:repository Backend\UserRepository Blog
+```
+
+The above will create a **Repositories** directory inside the **{Module}** directory.
+
+Create a repository with Interface.
+`php artisan make:repository your-repository-name {module-name} -i`
+
+Example:
+```
+php artisan module-make:repository UserRepository -i Blog
+```
+or
+```
+php artisan module-make:repository Backend\UserRepository -i Blog
+```
+Here you need to put extra `-i` flag.
+The above will create a **Repositories** directory inside the **{Module}** directory.
+
+
+Create a Service Class.
+`php artisan module-make:service your-service-name {module-name}`
+
+Example:
+```
+php artisan module-make:service UserService
+```
+or
+```
+php artisan module-make:service Backend\UserService
+```
+The above will create a **Services** directory inside the **{Module}** directory.
+
+Create a Trait.
+`php artisan make:trait your-trait-name {module-name}`
+
+Example:
+```
+php artisan make:trait HasAuth
+```
+or
+```
+php artisan make:trait Backend\HasAuth
+```
+The above will create a **Traits** directory inside the **{Module}** directory.
+
+
+Example:
+
+```
+<?php
+
+namespace DummyNamespace;
+
+use JasonGuru\LaravelMakeRepository\Repository\BaseRepository;
+//use Your Model
+
+/**
+ * Class DummyClass.
+ */
+class DummyClass extends BaseRepository
+{
+    /**
+     * @return string
+     *  Return the model
+     */
+    public function model()
+    {
+        //return YourModel::class
+    }
+}
+
+```
+
+<a href="https://www.buymeacoffee.com/fMy8dmHGl" target="_blank"><img src="https://bmc-cdn.nyc3.digitaloceanspaces.com/BMC-button-images/custom_images/orange_img.png" alt="Buy Me A Coffee" style="height: auto !important;width: auto !important;" ></a>
+
+
