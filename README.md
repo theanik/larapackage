@@ -1,5 +1,5 @@
 # Laravel Extra Command
-A simple package for create ** Repository, Repository with Interface, Service, Trait** form command line using `php artisan` command.
+A simple package for create ** Repository, Repository with Interface, Service, Trait** form command line using `php artisan` command.\
 [Note : This package also worked for [nWidart/laravel-modules](https://github.com/nWidart/laravel-modules)]
 
 ## Installation
@@ -18,7 +18,7 @@ Or add the following to your composer.json's require-dev section and `composer u
 
 ###### In Laravel Project
 
-Create a repository Class.
+Create a repository Class.\
 `php artisan make:repository your-repository-name`
 
 Example:
