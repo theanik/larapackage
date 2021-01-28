@@ -31,7 +31,7 @@ or
 php artisan make:repository Backend\UserRepository
 ```
 
-The above will create a **Repositories** directory inside the **App** directory.\\
+The above will create a **Repositories** directory inside the **App** directory.\
 
 __Create a repository with Interface.__\
 `php artisan make:repository your-repository-name -i`
