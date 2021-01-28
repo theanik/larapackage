@@ -6,13 +6,13 @@ A simple package for create __Repository, Repository with Interface, Service, Tr
 ## Installation
 Require the package with composer using the following command:
 
-`composer require theanik/laravel-extra-command --dev`
+```composer require theanik/laravel-more-command --dev```
 
 Or add the following to your composer.json's require-dev section and `composer update`
 
 ```json
 "require-dev": {
-        "theanik/laravel-extra-command": "^0.0.2"
+        "theanik/laravel-more-command": "^1.0.0"
     }
 ```
 ## Artisan Commands
@@ -33,7 +33,7 @@ php artisan make:repository Backend\UserRepository
 
 The above will create a **Repositories** directory inside the **App** directory.
 
-Create a repository with Interface.
+Create a repository with Interface.\
 `php artisan make:repository your-repository-name -i`
 
 Example:
@@ -48,7 +48,7 @@ Here you need to put extra `-i` flag.
 The above will create a **Repositories** directory inside the **App** directory.
 
 
-Create a Service Class.
+Create a Service Class.\
 `php artisan make:service your-service-name`
 
 Example:
@@ -61,7 +61,7 @@ php artisan make:service Backend\UserService
 ```
 The above will create a **Services** directory inside the **App** directory.
 
-Create a Trait.
+Create a Trait.\
 `php artisan make:trait your-trait-name`
 
 Example:
@@ -92,7 +92,7 @@ php artisan make:repository Backend\UserRepository Blog
 
 The above will create a **Repositories** directory inside the **{Module}** directory.
 
-Create a repository with Interface.
+Create a repository with Interface.\
 `php artisan make:repository your-repository-name {module-name} -i`
 
 Example:
@@ -107,7 +107,7 @@ Here you need to put extra `-i` flag.
 The above will create a **Repositories** directory inside the **{Module}** directory.
 
 
-Create a Service Class.
+Create a Service Class.\
 `php artisan module-make:service your-service-name {module-name}`
 
 Example:
@@ -120,7 +120,7 @@ php artisan module-make:service Backend\UserService
 ```
 The above will create a **Services** directory inside the **{Module}** directory.
 
-Create a Trait.
+Create a Trait.\
 `php artisan make:trait your-trait-name {module-name}`
 
 Example:
@@ -134,30 +134,24 @@ php artisan make:trait Backend\HasAuth
 The above will create a **Traits** directory inside the **{Module}** directory.
 
 
-Example:
+
+An Example of created repository:
 
 ```
 <?php
 
-namespace DummyNamespace;
+<?php
 
-use JasonGuru\LaravelMakeRepository\Repository\BaseRepository;
-//use Your Model
+namespace App\Repositories;
 
-/**
- * Class DummyClass.
- */
-class DummyClass extends BaseRepository
+class UserRepository
 {
-    /**
-     * @return string
-     *  Return the model
-     */
-    public function model()
+    public function __constuct()
     {
-        //return YourModel::class
+        //
     }
 }
+
 
 ```
 
