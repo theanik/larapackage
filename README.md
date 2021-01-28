@@ -19,7 +19,7 @@ Or add the following to your composer.json's require-dev section and `composer u
 
 ## In Laravel Project
 
-Create a repository Class.\
+__Create a repository Class.__\
 `php artisan make:repository your-repository-name`
 
 Example:
@@ -31,9 +31,9 @@ or
 php artisan make:repository Backend\UserRepository
 ```
 
-The above will create a **Repositories** directory inside the **App** directory.
+The above will create a **Repositories** directory inside the **App** directory.\\
 
-Create a repository with Interface.\
+__Create a repository with Interface.__\
 `php artisan make:repository your-repository-name -i`
 
 Example:
@@ -48,7 +48,7 @@ Here you need to put extra `-i` flag.
 The above will create a **Repositories** directory inside the **App** directory.
 
 
-Create a Service Class.\
+__Create a Service Class.__\
 `php artisan make:service your-service-name`
 
 Example:
@@ -61,7 +61,7 @@ php artisan make:service Backend\UserService
 ```
 The above will create a **Services** directory inside the **App** directory.
 
-Create a Trait.\
+__Create a Trait.__\
 `php artisan make:trait your-trait-name`
 
 Example:
@@ -78,7 +78,7 @@ The above will create a **Traits** directory inside the **App** directory.
 
 ## In [nWidart/laravel-modules](https://github.com/nWidart/laravel-modules) Modules
 
-Create a repository Class.\
+__Create a repository Class.__\
 `php artisan module-make:repository your-repository-name {module-name}`
 
 Example:
@@ -92,7 +92,7 @@ php artisan make:repository Backend\UserRepository Blog
 
 The above will create a **Repositories** directory inside the **{Module}** directory.
 
-Create a repository with Interface.\
+__Create a repository with Interface.__\
 `php artisan make:repository your-repository-name {module-name} -i`
 
 Example:
@@ -107,7 +107,7 @@ Here you need to put extra `-i` flag.
 The above will create a **Repositories** directory inside the **{Module}** directory.
 
 
-Create a Service Class.\
+__Create a Service Class.__\
 `php artisan module-make:service your-service-name {module-name}`
 
 Example:
@@ -120,7 +120,7 @@ php artisan module-make:service Backend\UserService
 ```
 The above will create a **Services** directory inside the **{Module}** directory.
 
-Create a Trait.\
+__Create a Trait.__\
 `php artisan make:trait your-trait-name {module-name}`
 
 Example:
@@ -135,7 +135,7 @@ The above will create a **Traits** directory inside the **{Module}** directory.
 
 
 
-An Example of created repository:
+__An Example of created repository class:__
 
 ```
 <?php
