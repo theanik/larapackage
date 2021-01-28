@@ -1,5 +1,5 @@
 
-# Laravel Extra Command
+# Laravel More Command
 A simple package for create __Repository, Repository with Interface, Service, Trait__ form command line using `php artisan` command.\
 [Note : This package also worked for [nWidart/laravel-modules](https://github.com/nWidart/laravel-modules)]
 
