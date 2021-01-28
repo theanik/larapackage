@@ -6,7 +6,9 @@ A simple package for create __Repository, Repository with Interface, Service, Tr
 ## Installation
 Require the package with composer using the following command:
 
-```composer require theanik/laravel-more-command --dev```
+```
+composer require theanik/laravel-more-command --dev
+```
 
 Or add the following to your composer.json's require-dev section and `composer update`
 
