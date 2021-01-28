@@ -127,11 +127,11 @@ __Create a Trait.__\
 
 Example:
 ```
-php artisan make:trait HasAuth
+php artisan module-make:trait HasAuth
 ```
 or
 ```
-php artisan make:trait Backend\HasAuth
+php artisan module-make:trait Backend\HasAuth
 ```
 The above will create a **Traits** directory inside the **{Module}** directory.
 
