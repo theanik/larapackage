@@ -1,62 +1,176 @@
-<p align="center"><a href="https://laravel.com" target="_blank"><img src="https://raw.githubusercontent.com/laravel/art/master/logo-lockup/5%20SVG/2%20CMYK/1%20Full%20Color/laravel-logolockup-cmyk-red.svg" width="400"></a></p>
+![issues](https://img.shields.io/github/issues/theanik/laravel-more-command??style=flat&logo=appveyor)
+![forks](https://img.shields.io/github/forks/theanik/laravel-more-command?style=flat&logo=appveyor)
+![stars](https://img.shields.io/github/stars/theanik/laravel-more-command?style=flat&logo=appveyor)
+[![GitHub license](https://img.shields.io/github/license/theanik/laravel-more-command)](https://github.com/theanik/laravel-more-command/blob/master/LICENSE)
 
-<p align="center">
-<a href="https://travis-ci.org/laravel/framework"><img src="https://travis-ci.org/laravel/framework.svg" alt="Build Status"></a>
-<a href="https://packagist.org/packages/laravel/framework"><img src="https://img.shields.io/packagist/dt/laravel/framework" alt="Total Downloads"></a>
-<a href="https://packagist.org/packages/laravel/framework"><img src="https://img.shields.io/packagist/v/laravel/framework" alt="Latest Stable Version"></a>
-<a href="https://packagist.org/packages/laravel/framework"><img src="https://img.shields.io/packagist/l/laravel/framework" alt="License"></a>
-</p>
+# Laravel More Command
+A simple package for create __Repository, Repository with Interface, Service, Trait__ form command line using `php artisan` command.\
+[Note : This package also worked for [nWidart/laravel-modules](https://github.com/nWidart/laravel-modules)]
 
-## About Laravel
+## Installation
+Require the package with composer using the following command:
 
-Laravel is a web application framework with expressive, elegant syntax. We believe development must be an enjoyable and creative experience to be truly fulfilling. Laravel takes the pain out of development by easing common tasks used in many web projects, such as:
+```
+composer require theanik/laravel-more-command --dev
+```
 
-- [Simple, fast routing engine](https://laravel.com/docs/routing).
-- [Powerful dependency injection container](https://laravel.com/docs/container).
-- Multiple back-ends for [session](https://laravel.com/docs/session) and [cache](https://laravel.com/docs/cache) storage.
-- Expressive, intuitive [database ORM](https://laravel.com/docs/eloquent).
-- Database agnostic [schema migrations](https://laravel.com/docs/migrations).
-- [Robust background job processing](https://laravel.com/docs/queues).
-- [Real-time event broadcasting](https://laravel.com/docs/broadcasting).
+Or add the following to your composer.json's require-dev section and `composer update`
 
-Laravel is accessible, powerful, and provides tools required for large, robust applications.
+```json
+"require-dev": {
+        "theanik/laravel-more-command": "^1.1.0"
+    }
+```
+### Artisan Command List
 
-## Learning Laravel
+<!-- List Of Command -->
+<details open="open">
+  <summary>Table of Contents</summary>
+  <ol>
+    <li><a href="#Make-Repository">Make Repository</a></li>
+    <li><a href="#Make-Service">Make Service</a></li>
+    <li><a href="#Make-Trait">Make Trait</a></li>
+    <li><a href="#Make-View">Make View</a></li>
+    <li><a href="#Log-Clear">Log Clear</a></li>
+  </ol>
+</details>
+<!-- End list of command -->
 
-Laravel has the most extensive and thorough [documentation](https://laravel.com/docs) and video tutorial library of all modern web application frameworks, making it a breeze to get started with the framework.
 
-If you don't feel like reading, [Laracasts](https://laracasts.com) can help. Laracasts contains over 1500 video tutorials on a range of topics including Laravel, modern PHP, unit testing, and JavaScript. Boost your skills by digging into our comprehensive video library.
+__Create a repository Class.__\
+`php artisan make:repository your-repository-name`
 
-## Laravel Sponsors
+Example:
+```
+php artisan make:repository UserRepository
+```
+or
+```
+php artisan make:repository Backend\UserRepository
+```
 
-We would like to extend our thanks to the following sponsors for funding Laravel development. If you are interested in becoming a sponsor, please visit the Laravel [Patreon page](https://patreon.com/taylorotwell).
+The above will create a **Repositories** directory inside the **App** directory.\
 
-### Premium Partners
+__Create a repository with Interface.__\
+`php artisan make:repository your-repository-name -i`
 
-- **[Vehikl](https://vehikl.com/)**
-- **[Tighten Co.](https://tighten.co)**
-- **[Kirschbaum Development Group](https://kirschbaumdevelopment.com)**
-- **[64 Robots](https://64robots.com)**
-- **[Cubet Techno Labs](https://cubettech.com)**
-- **[Cyber-Duck](https://cyber-duck.co.uk)**
-- **[Many](https://www.many.co.uk)**
-- **[Webdock, Fast VPS Hosting](https://www.webdock.io/en)**
-- **[DevSquad](https://devsquad.com)**
-- **[Curotec](https://www.curotec.com/)**
-- **[OP.GG](https://op.gg)**
+Example:
+```
+php artisan make:repository UserRepository -i
+```
+or
+```
+php artisan make:repository Backend\UserRepository -i
+```
+Here you need to put extra `-i` flag.
+The above will create a **Repositories** directory inside the **App** directory.
 
-## Contributing
 
-Thank you for considering contributing to the Laravel framework! The contribution guide can be found in the [Laravel documentation](https://laravel.com/docs/contributions).
+__Create a Service Class.__\
+`php artisan make:service your-service-name`
 
-## Code of Conduct
+Example:
+```
+php artisan make:service UserService
+```
+or
+```
+php artisan make:service Backend\UserService
+```
+The above will create a **Services** directory inside the **App** directory.
 
-In order to ensure that the Laravel community is welcoming to all, please review and abide by the [Code of Conduct](https://laravel.com/docs/contributions#code-of-conduct).
+__Create a Trait.__\
+`php artisan make:trait your-trait-name`
 
-## Security Vulnerabilities
+Example:
+```
+php artisan make:trait HasAuth
+```
+or
+```
+php artisan make:trait Backend\HasAuth
+```
+The above will create a **Traits** directory inside the **App** directory.
 
-If you discover a security vulnerability within Laravel, please send an e-mail to Taylor Otwell via [taylor@laravel.com](mailto:taylor@laravel.com). All security vulnerabilities will be promptly addressed.
+
+
+## In [nWidart/laravel-modules](https://github.com/nWidart/laravel-modules) Modules
+
+__Create a repository Class.__\
+`php artisan module:make-repository your-repository-name {module-name}`
+
+Example:
+```
+php artisan module:make-repository UserRepository Blog
+```
+or
+```
+php artisan module:make-repository Backend\UserRepository Blog
+```
+
+The above will create a **Repositories** directory inside the **{Module}** directory.
+
+__Create a repository with Interface.__\
+`php artisan module:make-repository your-repository-name {module-name} -i`
+
+Example:
+```
+php artisan module:make-repository UserRepository -i Blog
+```
+or
+```
+php artisan module:make-repository Backend\UserRepository -i Blog
+```
+Here you need to put extra `-i` flag.
+The above will create a **Repositories** directory inside the **{Module}** directory.
+
+
+__Create a Service Class.__\
+`php artisan module:make-service your-service-name {module-name}`
+
+Example:
+```
+php artisan module:make-service UserService
+```
+or
+```
+php artisan module:make-service Backend\UserService
+```
+The above will create a **Services** directory inside the **{Module}** directory.
+
+__Create a Trait.__\
+`php artisan module:make-trait your-trait-name {module-name}`
+
+Example:
+```
+php artisan module:make-trait HasAuth
+```
+or
+```
+php artisan module:make-trait Backend\HasAuth
+```
+The above will create a **Traits** directory inside the **{Module}** directory.
+
+
+
+__An Example of created repository class:__
+
+```
+<?php
+
+namespace App\Repositories;
+
+class UserRepository
+{
+    public function __constuct()
+    {
+        //
+    }
+}
+
+
+```
 
 ## License
 
-The Laravel framework is open-sourced software licensed under the [MIT license](https://opensource.org/licenses/MIT).
+The MIT License (MIT). Please see [License](LICENSE) for more information.
