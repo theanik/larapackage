@@ -10,7 +10,7 @@
     "repositories": [
         {
             "type" : "path",
-            "url" : "packages/theanik/service-repository",
+            "url" : "packages/theanik/laravel-more-command",
             "options": {
                 "symlink": true
             }
@@ -23,7 +23,8 @@
         "guzzlehttp/guzzle": "^7.0.1",
         "laravel/framework": "^8.12",
         "laravel/tinker": "^2.5",
-        "theanik/service-repository": "@dev"
+        "nwidart/laravel-modules": "^8.2",
+        "theanik/laravel-more-command": "@dev"
     },
     "require-dev": {
         "facade/ignition": "^2.5",
@@ -48,7 +49,9 @@
             "App\\": "app/",
             "Database\\Factories\\": "database/factories/",
             "Database\\Seeders\\": "database/seeders/",
-            "Theanik\\RepositoryService\\" : "packages/theanik/service-repository/src/"
+            "Theanik\\LaravelMoreCommand\\" : "packages/theanik/laravel-more-command/src/",
+            "Modules\\": "Modules/"
+
         }
     },
     "autoload-dev": {

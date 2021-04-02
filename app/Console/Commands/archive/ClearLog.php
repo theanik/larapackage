@@ -3,34 +3,23 @@
 namespace App\Console\Commands;
 
 use Illuminate\Console\Command;
-use Symfony\Component\Console\Input\InputArgument;
-use Symfony\Component\Console\Input\InputOption;
+use Illuminate\Support\Facades\Log;
 
-class TestCommad extends Command
+class ClearLog extends Command
 {
     /**
      * The name and signature of the console command.
      *
      * @var string
      */
-    // protected $signature = 'command:name';
-
-    protected $name = 'make:some';
-
-    protected function getArguments()
-    {
-        return [
-            ['reposit', InputArgument::REQUIRED, 'The name of the controller class.'],
-        ];
-    }
-
+    protected $signature = 'log:clear';
 
     /**
      * The console command description.
      *
      * @var string
      */
-    protected $description = 'Command description';
+    protected $description = 'Clear old log data';
 
     /**
      * Create a new command instance.
@@ -49,6 +38,12 @@ class TestCommad extends Command
      */
     public function handle()
     {
-        echo $this->argument('reposit');
+        
+        exec('rm -f ' . storage_path('logs/*.log'));
+        
+        $this->info("Logs have been cleared!");
+
+        Log::info("Log Cleared at ".date('l jS \of F Y h:i:s A'));
+
     }
 }
